@@ -17,4 +17,4 @@ function migrate () {
 }
 export -f migrate
 
-find ${path} -name '*.txt' -type f -exec bash -c 'migrate "$0"' {} \;
+find ${path} -name '*.java' -type f -exec bash -c 'migrate "$0"' {} \;
