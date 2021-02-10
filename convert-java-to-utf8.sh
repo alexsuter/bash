@@ -10,9 +10,11 @@ function migrate () {
   file=$1
   echo ${file}
   tmpFile=${file}.tmp
+
+  cp --preserve ${file} ${tmpFile}
   iconv -f ISO_8859-1 -t UTF-8 -o ${tmpFile} ${file}
   mv ${tmpFile} ${file}
 }
 export -f migrate
 
-find ${path} -name '*.java' -type f -exec bash -c 'migrate "$0"' {} \;
+find ${path} -name '*.txt' -type f -exec bash -c 'migrate "$0"' {} \;
