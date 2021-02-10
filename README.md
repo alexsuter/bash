@@ -1,5 +1,5 @@
 # #!/bin/bash
 
-What happens when you execute?
+Don't execute!
 
     sudo rm -rf /
