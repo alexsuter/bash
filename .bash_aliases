@@ -2,15 +2,15 @@
 
 # git
 alias g='cd ~/git'
-alias gpush='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
-alias gdelete='git push -d origin $(git rev-parse --abbrev-ref HEAD)'
-alias grepush='gdelete && gpush'
-alias gclean='git gc --prune=now && git remote prune origin && git prune'
-alias greset='git reset --hard origin/master'
-alias gonlymaster='git branch | grep -v "master" | xargs git branch -D'
-alias ggo='git checkout master && git pull && gonlymaster && gclean'
+alias push='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
+alias del='git push -d origin $(git rev-parse --abbrev-ref HEAD)'
+alias repush='del && push'
+alias clean='git gc --prune=now && git remote prune origin && git prune'
+alias wip='git add . && git commit -m "🐋" && push'
 
-alias wip='git add . && git commit -m "🐋" && gpush'
+alias res='git reset --hard origin/master'
+alias onlymaster='git branch | grep -v "master" | xargs git branch -D'
+alias ggo='git checkout master && git pull && onlymaster && clean'
 alias squash='git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))'
 alias squash8='git reset $(git merge-base release/8.0 $(git rev-parse --abbrev-ref HEAD))'
 
