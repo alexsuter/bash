@@ -5,7 +5,7 @@ alias g='cd ~/git'
 alias push='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
 alias del='git push -d origin $(git rev-parse --abbrev-ref HEAD)'
 alias repush='del && push'
-alias forcepush='git push -u origin $(git rev-parse --abbrev-ref HEAD) --force'
+alias fpush='git push -u origin $(git rev-parse --abbrev-ref HEAD) --force'
 alias clean='git gc --prune=now && git remote prune origin && git prune'
 alias wip='git add . && git commit -m "🐋" && push'
 
