@@ -13,6 +13,7 @@ alias res='git reset --hard origin/master'
 alias onlymaster='git branch | grep -v "master" | xargs git branch -D'
 alias ggo='git checkout master && git pull && onlymaster && clean'
 alias squash='git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))'
+alias squash10='git reset $(git merge-base release/10.0 $(git rev-parse --abbrev-ref HEAD))'
 alias squash8='git reset $(git merge-base release/8.0 $(git rev-parse --abbrev-ref HEAD))'
 
 # docker
@@ -24,6 +25,7 @@ alias dprune='docker system prune --all --force --volumes'
 # misc
 alias update='sudo apt update && sudo apt dist-upgrade && sudo apt autoremove'
 alias bat='batcat'
-alias java8='JAVA_HOME=/usr/lib/jvm/java-8-oracle/'
+alias java8='JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/'
+alias java11='JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/'
 alias weather='curl wttr.in/Zug+Switzerland'
-alias it='cd ~/git/ivy-core/development/integration-test/'
+alias it='cd ~/git/core/development/integration-test/'
