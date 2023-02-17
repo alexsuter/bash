@@ -8,6 +8,7 @@ alias repush='del && push'
 alias fpush='git push -u origin $(git rev-parse --abbrev-ref HEAD) --force'
 alias clean='git gc --prune=now && git remote prune origin && git prune'
 alias wip='git add . && git commit -m "🐋" && push'
+alias p='git cherry-pick '
 
 alias res='git reset --hard origin/master'
 alias onlymaster='git branch | grep -v "master" | xargs git branch -D'
